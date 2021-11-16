@@ -6,9 +6,11 @@ enum layers {
     _RAISE,
 };
 
+#define RS_SPC LT(_RAISE, KC_SPC)
+#define LW_LGUI LT(_LOWER, KC_LGUI)
+#define RS_LGUI LT(_RAISE, KC_LGUI)
 #define MT_LALT LALT_T(KC_ESC)
 #define MT_RALT RALT_T(KC_ENT)
-#define MT_SPC LT(_RAISE, KC_SPC)
 #define MT_LSFT LSFT_T(KC_EQL)
 #define MT_RSFT RSFT_T(KC_MINS)
 
@@ -19,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
                  KC_BSLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC__MUTE,                              KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
                  KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_GRV,  KC_INS,  KC_PSCR,  KC_RBRC,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RCTL,
-                                                     KC_LGUI, MT_LSFT, MT_SPC,  MT_LALT, MT_RALT,  MO(_LOWER),MT_RSFT, KC_LGUI
+                                                     LW_LGUI, MT_LSFT, RS_SPC,  MT_LALT, MT_RALT,  MO(_LOWER),MT_RSFT, RS_LGUI
     ),
     [_LOWER] = LAYOUT(
                  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, KC_CIRC,                                     KC_AMPR, KC_ASTR, KC_MINS, KC_UNDS, KC_PLUS, KC_EQL,
